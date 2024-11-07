@@ -21,8 +21,8 @@
 
                 <div *ngIf="produto.promocao" class="card-body">
                     <div>
+                        <!-- | currency:'BRL':true:'1.2-2':'pt' precisa registar no appModeule -->
                         <h4 class="card-text">De:
-                            para  | currency:'BRL':true:'1.2-2':'pt' precisa registar no appModeule
                             <small><del>{{ produto.valor | currency:'BRL':true:'1.2-2':'pt' }}</del></small>
                             Por: {{ produto.valorPromo | currency:'BRL':true:'1.2-2':'pt' }}
                         </h4>
