@@ -6,7 +6,7 @@
         <div *ngFor="let produto of produtos" class="col-md-4" style="padding-bottom: 30px;">
             <div class="card h-100">
                 <!-- /produto-detalhe não existe é só um exemplo -->
-                 <!-- no app route preciso mapear a rota, /produto-detalhe:id -->
+                 <!-- no app route preciso mapear a rota,  -->
                 <a class="text-decoration-none" [routerLink]="['/produto-detalhe', produto.id]">
                     <div style="align-content:center;">
                         <img src="/assets/full_dev.jpg" height="164px" width="253px" alt="">
@@ -22,15 +22,16 @@
                 <div *ngIf="produto.promocao" class="card-body">
                     <div>
                         <h4 class="card-text">De:
-                            <small><del>{{ produto.valor }}</del></small>
-                            Por: {{ produto.valorPromo }}
+                            para  | currency:'BRL':true:'1.2-2':'pt' precisa registar no appModeule
+                            <small><del>{{ produto.valor | currency:'BRL':true:'1.2-2':'pt' }}</del></small>
+                            Por: {{ produto.valorPromo | currency:'BRL':true:'1.2-2':'pt' }}
                         </h4>
                     </div>
                 </div>
 
                 <div *ngIf="!produto.promocao" class="card-body">
                     <div>
-                        <h4>{{ produto.valor }}</h4>
+                        <h4>{{ produto.valor | currency:'BRL':true:'1.2-2':'pt' }}</h4>
                     </div>
                 </div>
 
